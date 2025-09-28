@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Melistandard Bottompot - Delivering Standard in Every Bite</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Capriola Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Capriola&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom Colors defined here for easier use */
+      .bg-primary {
+        background-color: #333333;
+      } /* Overall background */
+      .text-secondary {
+        color: #ffd400;
+      }
+      .bg-secondary {
+        background-color: #ffd400;
+      }
+      .bg-accent-red {
+        background-color: #a71d31;
+      }
+      .text-accent-mint {
+        color: #c2e7da;
+      }
+
+      /* Ensuring the body uses the main background color */
+      body {
+        background-color: #333333;
+        color: white;
+        /* Applying Capriola font */
+        font-family: "Capriola", cursive;
+        overflow-x: hidden;
+      }
+
+      /* Business Card Flip Effect (Optional, but cool!) */
+      .card-container {
+        perspective: 1000px;
+      }
+      .business-card {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.8s;
+      }
+      .business-card:hover {
+        transform: rotateY(180deg);
+      }
+      .card-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        /* Removed border-radius for a square look */
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+      .card-front {
+        background-color: #2e2e2e; /* Keeping contrast */
+        border: 2px solid #ffd400;
+      }
+      .card-back {
+        background-color: #ffd400;
+        color: #222222;
+        transform: rotateY(180deg);
+      }
+
+      /* Animation for the hero text */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translate3d(0, -20px, 0);
+        }
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      .animate-fade-in-down {
+        animation: fadeInDown 1s ease-out;
+      }
+    </style>
+  </head>
+  <body class="bg-primary">
+    <!-- Header / Navigation -->
+    <header
+      class="p-4 border-b border-[#444] fixed top-0 w-full z-50 bg-[#333333] bg-opacity-95 backdrop-blur-sm"
+    >
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <!-- LOGO: Removed border-2 border-secondary p-1 -->
+          <img
+            src="https://i.ibb.co/d0QsfrFG/Screenshot-26.png"
+            alt="Melistandard Bottompot Logo"
+            class="h-10 w-auto"
+          />
+          <span class="text-2xl font-extrabold text-secondary"
+            >Melistandard</span
+          >
+        </div>
+        <nav class="hidden md:flex space-x-8 text-lg font-medium">
+          <a href="#about" class="hover:text-secondary transition duration-300"
+            >Our Standard</a
+          >
+          <!-- New link for the Color Scheme section -->
+          <a href="#colors" class="hover:text-secondary transition duration-300"
+            >Color Scheme</a
+          >
+          <a href="#card" class="hover:text-secondary transition duration-300"
+            >Contact Card</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-secondary transition duration-300"
+            >Connect</a
+          >
+        </nav>
+        <button class="md:hidden text-secondary text-2xl">
+          <!-- Simple hamburger icon using SVG -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="pt-20">
+      <!-- Hero Section: Added bg-[#222222] -->
+      <section
+        id="hero"
+        class="relative min-h-[80vh] flex items-center justify-center p-8 bg-[#222222]"
+      >
+        <div class="text-center max-w-4xl animate-fade-in-down">
+          <!-- LOGO: Removed border-4 border-secondary p-2 -->
+          <img
+            src="https://i.ibb.co/d0QsfrFG/Screenshot-26.png"
+            alt="Logo"
+            class="w-24 h-24 mx-auto mb-6"
+          />
+
+          <h1
+            class="text-5xl md:text-7xl font-black mb-4 tracking-tight leading-tight"
+          >
+            <span class="text-secondary">Melistandard</span> Bottompot
+          </h1>
+          <p class="text-xl md:text-2xl font-light text-accent-mint mt-4">
+            "Delivering standard in every bite."
+          </p>
+          <div class="mt-10 space-x-4">
+            <a
+              href="#about"
+              class="inline-block px-8 py-3 bg-secondary text-[#222222] font-bold text-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105"
+            >
+              Discover Our Standard
+            </a>
+            <a
+              href="#card"
+              class="inline-block px-8 py-3 border-2 border-secondary text-white font-bold text-lg hover:bg-secondary hover:text-[#222222] transition duration-300"
+            >
+              Contact Us
+            </a>
+          </div>
+        </div>
+        <!-- Subtle Gold Splash in the background -->
+        <div class="absolute inset-0 z-[-1] opacity-5">
+          <div
+            class="w-full h-full bg-secondary clip-path-polygon-[0%_0%,_100%_0%,_100%_80%,_0%_100%]"
+          ></div>
+        </div>
+      </section>
+
+      <!-- About/Our Standard Section -->
+      <section id="about" class="py-20 md:py-32 p-8 max-w-7xl mx-auto">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-secondary border-b-4 border-accent-red pb-3 inline-block mx-auto"
+        >
+          Our Standard
+        </h2>
+        <div class="grid md:grid-cols-3 gap-10 text-center">
+          <!-- Card 1: Uncompromising Quality (Star Icon) -->
+          <div class="p-6 bg-[#444444] border-t-4 border-secondary shadow-2xl">
+            <div class="text-5xl text-secondary mb-4 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-star fill-secondary text-secondary"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Uncompromising Quality</h3>
+            <p class="text-gray-300">
+              We source only the finest ingredients, ensuring that every meal we
+              prepare meets the Melistandard of excellence.
+            </p>
+          </div>
+          <!-- Card 2: Authentic Flavor (Utensils Icon in Red) -->
+          <div class="p-6 bg-[#444444] border-t-4 border-accent-red shadow-2xl">
+            <div class="text-5xl text-accent-red mb-4 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-utensils text-accent-red"
+              >
+                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                <path d="M7 2v20" />
+                <path d="M21 15v5c0 1.1-.9 2-2 2h-2a2 2 0 0 1-2-2v-5" />
+                <path d="M17 15v7" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Authentic Flavor</h3>
+            <p class="text-gray-300">
+              Rooted in tradition, our recipes deliver a taste that is both
+              familiar and exciting, a true bottompot experience.
+            </p>
+          </div>
+          <!-- Card 3: Customer Focus (Check Circle Icon in Mint) -->
+          <div class="p-6 bg-[#444444] border-t-4 border-secondary shadow-2xl">
+            <div class="text-5xl text-accent-mint mb-4 flex justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="48"
+                height="48"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-check-circle text-accent-mint"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <path d="M9 11l3 3L22 4" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-3">Customer Focus</h3>
+            <p class="text-gray-300">
+              Our standard extends beyond the kitchen—we're committed to
+              delivering a superior, warm, and friendly service every time.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand Color Scheme Section -->
+      <section id="colors" class="py-20 md:py-32 p-8 bg-[#2e2e2e]">
+        <div class="max-w-7xl mx-auto">
+          <h2
+            class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-white border-b-4 border-secondary pb-3 inline-block mx-auto"
+          >
+            Brand Color Scheme
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Color 1: Primary Base -->
+            <div
+              class="p-4 border-2 border-[#444] text-center bg-[#333333] shadow-lg"
+            >
+              <div
+                class="h-20 w-full bg-[#333333] mb-3 border-b-4 border-white"
+              ></div>
+              <h3 class="text-xl font-bold text-white">Primary Base</h3>
+              <p class="text-sm text-gray-400">#333333</p>
+              <p class="text-xs text-gray-500 mt-2">
+                Main background, large sections, and text container bases.
+              </p>
+            </div>
+
+            <!-- Color 2: Signature Gold -->
+            <div
+              class="p-4 border-2 border-[#444] text-center bg-[#333333] shadow-lg"
+            >
+              <div
+                class="h-20 w-full bg-secondary mb-3 border-b-4 border-white"
+              ></div>
+              <h3 class="text-xl font-bold text-secondary">Signature Gold</h3>
+              <p class="text-sm text-gray-400">#FFD400</p>
+              <p class="text-xs text-gray-500 mt-2">
+                Highlights, primary headings, navigation links, and key focus
+                items.
+              </p>
+            </div>
+
+            <!-- Color 3: Accent Red -->
+            <div
+              class="p-4 border-2 border-[#444] text-center bg-[#333333] shadow-lg"
+            >
+              <div
+                class="h-20 w-full bg-accent-red mb-3 border-b-4 border-white"
+              ></div>
+              <h3 class="text-xl font-bold text-accent-red">Accent Red</h3>
+              <p class="text-sm text-gray-400">#A71D31</p>
+              <p class="text-xs text-gray-500 mt-2">
+                Call-to-action buttons, separators, and bold emphasis elements.
+              </p>
+            </div>
+
+            <!-- Color 4: Accent Mint Green -->
+            <div
+              class="p-4 border-2 border-[#444] text-center bg-[#333333] shadow-lg"
+            >
+              <div
+                class="h-20 w-full bg-accent-mint mb-3 border-b-4 border-white"
+              ></div>
+              <h3 class="text-xl font-bold text-accent-mint">Accent Mint</h3>
+              <p class="text-sm text-gray-400">#C2E7DA</p>
+              <p class="text-xs text-gray-500 mt-2">
+                Taglines, subtle secondary text, and service icons.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Business Card Design Section -->
+      <section id="card" class="py-20 md:py-32 p-8 max-w-7xl mx-auto">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-center mb-16 text-secondary pb-3"
+        >
+          Digital Business Card
+        </h2>
+        <div class="flex justify-center">
+          <div class="card-container w-full max-w-sm md:max-w-md h-52">
+            <div class="business-card">
+              <!-- Card Front -->
+              <div
+                class="card-face card-front flex-col justify-between items-start"
+              >
+                <div class="w-full flex justify-between items-start">
+                  <!-- LOGO: No border applied -->
+                  <img
+                    src="https://i.ibb.co/d0QsfrFG/Screenshot-26.png"
+                    alt="Logo"
+                    class="h-10 w-auto"
+                  />
+                  <span class="text-sm font-bold text-accent-mint"
+                    >Delivering standard in every bite.</span
+                  >
+                </div>
+                <div class="text-left w-full">
+                  <p class="text-3xl font-black text-secondary">Melistandard</p>
+                  <p class="text-lg font-bold text-white">CHEF & FOUNDER</p>
+                </div>
+              </div>
+
+              <!-- Card Back (Uses secondary color as main background for high contrast) -->
+              <div
+                class="card-face card-back flex-col justify-center text-center"
+              >
+                <div class="flex flex-col items-center">
+                  <p class="text-2xl font-extrabold mb-1">Contact Us</p>
+                  <p
+                    class="text-sm font-medium mb-1 border-b border-[#222222] pb-1"
+                  >
+                    hello@melistandard.com
+                  </p>
+                  <p
+                    class="text-sm font-medium mb-1 border-b border-[#222222] pb-1"
+                  >
+                    (555) 123-4567
+                  </p>
+                  <p class="text-sm font-medium text-accent-red mt-2">
+                    Swipe/Hover for details!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-primary p-10 border-t border-[#444] mt-12">
+      <div class="max-w-7xl mx-auto text-center">
+        <h3 class="text-3xl font-bold mb-4 text-secondary">Get In Touch</h3>
+        <p class="text-white mb-6">
+          Join our newsletter for the latest standards and savory secrets.
+        </p>
+
+        <form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-2">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="w-full sm:flex-1 p-3 bg-[#222222] text-white border border-[#444]"
+            required
+          />
+          <button
+            type="submit"
+            class="px-6 py-3 bg-accent-red text-white font-bold hover:bg-[#8C1B2B] transition duration-300"
+          >
+            Subscribe
+          </button>
+        </form>
+
+        <div class="mt-8 pt-6 border-t border-[#444]">
+          <p class="text-sm text-gray-400">
+            &copy; 2024 Melistandard Bottompot. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Simple JavaScript to smooth scroll (optional but enhances UX) -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
